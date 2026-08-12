@@ -1,0 +1,35 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    environment:
+      TZ: 'America/Mexico_City'
+      WEBPASSWORD: 'cambia-esta-clave'
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    ports:
+      - '53:53/tcp'
+      - '53:53/udp'
+      - '8080:80/tcp'
+    networks:
+      - lan
+
+  nginx-proxy:
+    container_name: nginx-proxy
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80/tcp'
+      - '81:81/tcp'
+      - '443:443/tcp'
+    volumes:
+      - './npm-data:/data'
+      - './npm-letsencrypt:/etc/letsencrypt'
+    networks:
+      - lan
+
+networks:
+  lan:
+    driver: bridge
