@@ -8,6 +8,7 @@ Infraestructura local con **Pi-hole** (DNS con bloqueo de anuncios) y **Nginx Pr
 |----------|------------|--------|-------------|---------|
 | Pi-hole | `pihole` | `pihole/pihole:latest` | 53 (TCP/UDP), 8080 | DNS de la LAN + bloqueo de anuncios |
 | Nginx Proxy Manager | `nginx-proxy` | `jc21/nginx-proxy-manager:latest` | 80, 81 | Reverse proxy + panel web |
+| Homer (landing) | `homer` | `b4bz/homer:latest` | 8090 | Landing con catálogo de servicios |
 
 ### Pi-hole (DNS) — `http://192.168.5.112:8080/admin`
 
@@ -23,6 +24,12 @@ Infraestructura local con **Pi-hole** (DNS con bloqueo de anuncios) y **Nginx Pr
 - Cede el puerto 80 (HTTP) para enrutar los dominios `.local`.
 - Panel de administración en el puerto 81 (setup inicial crea el usuario admin).
 - Cada servicio se registra en **Hosts → Proxy Hosts** apuntando a su IP:puerto interno.
+
+### Homer (landing) — `http://192.168.5.112:8090`
+
+- Landing con el catálogo de los servicios `.local`.
+- La lista se edita en `homer/config.yml` (título, servicios, iconos y enlaces).
+- Se publica en la LAN vía NPM como `home.local` (Static/Proxy Host → `192.168.5.112:8090`).
 
 ## Red y DNS
 
@@ -82,3 +89,4 @@ docker logs nginx-proxy -f    # logs del proxy
 | `etc-dnsmasq.d/` | Registros DNS locales (`*.local`) |
 | `npm-data/` | Proxy hosts y configuración de NPM |
 | `npm-letsencrypt/` | Certificados de NPM |
+| `homer/` | Configuración del landing (`config.yml`) |

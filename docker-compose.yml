@@ -30,6 +30,17 @@ services:
     networks:
       - lan
 
+  homer:
+    container_name: homer
+    image: 'b4bz/homer:latest'
+    restart: unless-stopped
+    ports:
+      - '8090:8080/tcp'
+    volumes:
+      - './homer:/www/assets'
+    networks:
+      - lan
+
 networks:
   lan:
     driver: bridge

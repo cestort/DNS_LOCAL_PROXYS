@@ -1,0 +1,29 @@
+Configurar DNS primario (Pi-hole) y alternativo (Google 8.8.8.8)
+================================================================
+
+Ejecutar en PowerShell como administrador.
+
+OPCION A) Automatica: detecta la interfaz activa y configura el DNS (recomendada)
+
+   $idx = (Get-NetRoute -DestinationPrefix '0.0.0.0/0' | Sort-Object RouteMetric | Select-Object -First 1).ifIndex
+   Set-DnsClientServerAddress -InterfaceIndex $idx -ServerAddresses ("192.168.5.112","8.8.8.8")
+
+   (Todo en una sola linea. Detecta la interfaz con salida a internet y le aplica el DNS.)
+
+OPCION B) Manual: si se quiere elegir la interfaz a mano
+
+   1) Ver el Index de la interfaz de red activa (normalmente la de Wi-Fi o Ethernet):
+
+      Get-NetAdapter | Format-Table Name, InterfaceIndex, Status
+
+   2) Sustituir <InterfaceIndex> por el numero obtenido (ej. 6) y ejecutar:
+
+      Set-DnsClientServerAddress -InterfaceIndex <InterfaceIndex> -ServerAddresses ("192.168.5.112","8.8.8.8")
+
+      Ejemplo concreto para este equipo:
+
+      Set-DnsClientServerAddress -InterfaceIndex 6 -ServerAddresses ("192.168.5.112","8.8.8.8")
+
+3) (Opcional) Comprobar la resolucion de un nombre local:
+
+   nslookup coei.local
