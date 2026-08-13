@@ -5,14 +5,14 @@ services:
     restart: unless-stopped
     environment:
       TZ: 'America/Mexico_City'
-      WEBPASSWORD: 'cambia-esta-clave'
+      WEBPASSWORD: 'U5u4r10_C431'
     volumes:
       - './etc-pihole:/etc/pihole'
       - './etc-dnsmasq.d:/etc/dnsmasq.d'
     ports:
       - '53:53/tcp'
       - '53:53/udp'
-      - '8080:80/tcp'
+      - '8081:80/tcp'
     networks:
       - lan
 

@@ -17,13 +17,12 @@
 #                       WITHIN /etc/dnsmasq.d/yourname.conf                      #
 #    (make sure misc.etc_dnsmasq_d is set to true in /etc/pihole/pihole.toml)    #
 #                                                                                #
-#                      Last updated: 2026-08-12 04:40:36 CST                     #
+#                      Last updated: 2026-08-13 05:07:20 CST                     #
 #                               by FTL version v6.7                              #
 #                                                                                #
 ##################################################################################
 
-192.168.5.112 traductor.local
-192.168.5.112 django.local
+192.168.5.54 COEI.local
 
 
-# There are 2 entries in this file
+# There is 1 entry in this file

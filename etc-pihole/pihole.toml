@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.7)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2026-08-12 04:40:35 CST
+# Last updated on 2026-08-13 05:07:20 CST
 
 [dns]
   # Upstream DNS Servers to be used by Pi-hole. If this is not set, Pi-hole will not
@@ -132,8 +132,7 @@
   # Allowed values are:
   #     Array of custom DNS records each one in HOSTS form: "IP HOSTNAME [HOSTNAME ...]"
   hosts = [
-    "192.168.5.112 traductor.local",
-    "192.168.5.112 django.local"
+    "192.168.5.54 COEI.local"
   ] ### CHANGED, default = []
 
   # If set, queries for plain names, without dots or domain parts, are never forwarded to
@@ -1150,7 +1149,7 @@
     #
     # Allowed values are:
     #     A valid Pi-hole password hash
-    pwhash = "$BALLOON-SHA256$v=1$s=1024,t=32$Wk4WHVVcm3VcDEpmk5IYZw==$z+Q5TTZfDE2usZvBXRMowVltIrOvRf9aNyMruiGxJjg=" ### CHANGED, default = ""
+    pwhash = "$BALLOON-SHA256$v=1$s=1024,t=32$YApHzUeSs5EEvrFUBLZ0tg==$BkAewO8ZMcvcdk8UaOk6w89Ni+kbKg9o+txUGPnyUr0=" ### CHANGED, default = ""
 
     # Pi-hole 2FA TOTP secret. When set to something different than an empty string, 2FA
     # authentication will be enforced for the API and the web interface. This setting is

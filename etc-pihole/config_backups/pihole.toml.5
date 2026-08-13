@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.7)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2026-08-12 04:05:56 CST
+# Last updated on 2026-08-13 04:38:18 CST
 
 [dns]
   # Upstream DNS Servers to be used by Pi-hole. If this is not set, Pi-hole will not
@@ -131,7 +131,10 @@
   #
   # Allowed values are:
   #     Array of custom DNS records each one in HOSTS form: "IP HOSTNAME [HOSTNAME ...]"
-  hosts = []
+  hosts = [
+    "192.168.5.112 traductor.local",
+    "192.168.5.112 django.local"
+  ] ### CHANGED, default = []
 
   # If set, queries for plain names, without dots or domain parts, are never forwarded to
   # upstream nameservers
@@ -1399,7 +1402,7 @@
   #
   # Allowed values are:
   #     true or false
-  etc_dnsmasq_d = true
+  etc_dnsmasq_d = true ### CHANGED, default = false
 
   # Additional lines to inject into the generated dnsmasq configuration.
   # Warning: This is an advanced setting and should only be used with care. Incorrectly
@@ -1739,6 +1742,6 @@
   all = false
 
 # Configuration statistics:
-# 167 total entries out of which 164 entries are default
-# --> 3 entries are modified
+# 167 total entries out of which 162 entries are default
+# --> 5 entries are modified
 
