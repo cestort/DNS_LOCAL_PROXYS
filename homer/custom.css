@@ -1,0 +1,40 @@
+/* Identidad COEI: tipografía serif institucional en títulos/tarjetas,
+   monoespaciada en etiquetas y encabezados de grupo. Los colores base
+   (fondo, tarjetas, acentos) ya se definen en config.yml -> colors. */
+
+:root {
+  --coei-display: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", "Book Antiqua", Georgia, serif;
+  --coei-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.title,
+.subtitle,
+.card-header-title {
+  font-family: var(--coei-display) !important;
+  font-weight: 400 !important;
+}
+
+.title {
+  letter-spacing: .01em;
+  text-wrap: balance;
+}
+
+.group-title {
+  font-family: var(--coei-mono) !important;
+  font-size: .75rem !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+.tag {
+  font-family: var(--coei-mono) !important;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: .68rem !important;
+}
+
+.logo img,
+.logo svg {
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .35));
+}
