@@ -38,3 +38,10 @@
 .logo svg {
   filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .35));
 }
+
+/* Tema fijo: el ciclo automático/claro/oscuro del botón nativo de Homer
+   no se puede acotar a 2 estados sin tocar su JS, así que se oculta y el
+   portal queda siempre en el oscuro definido en defaults.colorTheme. */
+a[aria-label="Toggle dark mode"] {
+  display: none !important;
+}

@@ -13,9 +13,9 @@ defaults:
 
 colors:
   dark:
-    highlight-primary: "#e3ab3d"
-    highlight-secondary: "#b98f3f"
-    highlight-hover: "#f0bc55"
+    highlight-primary: "#4d689c"
+    highlight-secondary: "#5573ab"
+    highlight-hover: "#6f89c2"
     background: "#0a0e16"
     card-background: "#121a29"
     text: "#c7cddb"
@@ -26,33 +26,36 @@ colors:
     link: "#e3ab3d"
     link-hover: "#f0bc55"
   light:
-    highlight-primary: "#8a611f"
-    highlight-secondary: "#2e416a"
-    highlight-hover: "#6f4c17"
+    highlight-primary: "#2e416a"
+    highlight-secondary: "#243657"
+    highlight-hover: "#3a4f80"
     background: "#f3f1eb"
     card-background: "#ffffff"
     text: "#33291a"
-    text-header: "#2e416a"
+    text-header: "#f4f1e9"
     text-title: "#2e416a"
     text-subtitle: "#6b5f4d"
     card-shadow: rgba(0, 0, 0, 0.1)
     link: "#8a611f"
     link-hover: "#6f4c17"
 
-links:
+services:
   - name: "Administración"
     icon: "fas fa-cogs"
-    links:
+    items:
       - name: "Pi-hole"
+        subtitle: "DNS de la LAN y bloqueo de anuncios"
+        tag: "ops"
         url: "http://192.168.5.112:8080/admin"
         icon: "fas fa-shield-halved"
         target: "_blank"
       - name: "Nginx Proxy Manager"
+        subtitle: "Reverse proxy · panel de hosts"
+        tag: "ops"
         url: "http://192.168.5.112:81"
         icon: "fas fa-network-wired"
         target: "_blank"
 
-services:
   - name: "APIs de IA"
     icon: "fas fa-brain"
     items:
