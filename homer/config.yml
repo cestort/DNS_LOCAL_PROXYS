@@ -7,6 +7,7 @@ columns: "3"
 showDescription: true
 stylesheet:
   - "assets/custom.css"
+footer: false
 
 defaults:
   colorTheme: dark
@@ -70,4 +71,10 @@ services:
         tag: "api"
         url: "http://192.168.5.54:5000/ui"
         icon: "fas fa-magnifying-glass"
+        target: "_blank"
+      - name: "Transcriptor Whisper"
+        subtitle: "Transcripción de audio y vídeo · prueba interactiva"
+        tag: "api"
+        url: "http://192.168.5.54:8001/ui"
+        icon: "fas fa-microphone"
         target: "_blank"
