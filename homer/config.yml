@@ -7,6 +7,7 @@ columns: "3"
 showDescription: true
 stylesheet:
   - "assets/custom.css"
+footer: false
 
 defaults:
   colorTheme: dark
